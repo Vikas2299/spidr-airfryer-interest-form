@@ -1,7 +1,7 @@
-import SpidrForm from '../components/SpidrForm';
+import Form from '../components/Form';
 
 function HomePage() {
-  return <SpidrForm />;
+  return <Form />;
 }
- 
+
 export default HomePage; 

@@ -12,7 +12,7 @@ const initialState = {
   spidrPin: '',
 };
 
-function SpidrForm() {
+function Form() {
   const [form, setForm] = useState(initialState);
   const [showPin, setShowPin] = useState(false);
   const webBgRef = useRef(null);
@@ -172,4 +172,4 @@ function SpidrForm() {
   );
 }
 
-export default SpidrForm; 
+export default Form; 
