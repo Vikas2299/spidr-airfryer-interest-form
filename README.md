@@ -59,3 +59,7 @@ npm run build
 ## Usage
 
 This interest form is intended for use by Spidr Design as part of their product launch initiatives. It is designed to be embedded at the bottom of the Spidr Design landing page to collect potential customer interest for new products. The form provides a seamless, branded experience and captures essential lead information for follow-up and marketing purposes.
+
+**Links:**
+
+- Live app: [https://spidr-airfryer-interest-form.netlify.app](https://spidr-airfryer-interest-form.netlify.app)

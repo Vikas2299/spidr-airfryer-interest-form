@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import spidrLogo from '../assets/spidr_logo.png';
-import { formatPin, maskPinWithDashes } from '../utils/formUtils';
+import { formatPin } from '../utils/formUtils';
 import '../App.css';
 
 const initialState = {
