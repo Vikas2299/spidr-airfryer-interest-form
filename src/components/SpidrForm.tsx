@@ -18,22 +18,35 @@ function SpidrForm() {
   const webBgRef = useRef(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).VANTA && (window as any).VANTA.NET) {
-      const effect = (window as any).VANTA.NET({
-        el: webBgRef.current,
-        color: 0x4492a2,
-        backgroundColor: 0x23262b,
-        points: 10.0,
-        maxDistance: 20.0,
-        spacing: 18.0,
-        mouseControls: true,
-        touchControls: false,
-        gyroControls: false,
-        scale: 1.0,
-        scaleMobile: 1.0,
-      });
-      return () => { if (effect) effect.destroy(); };
+    let effect: any = null;
+    try {
+      if (
+        typeof window !== 'undefined' &&
+        (window as any).VANTA &&
+        (window as any).VANTA.NET &&
+        webBgRef.current
+      ) {
+        effect = (window as any).VANTA.NET({
+          el: webBgRef.current,
+          color: 0x4492a2,
+          backgroundColor: 0x23262b,
+          points: 10.0,
+          maxDistance: 20.0,
+          spacing: 18.0,
+          mouseControls: true,
+          touchControls: false,
+          gyroControls: false,
+          scale: 1.0,
+          scaleMobile: 1.0
+        });
+      }
+    } catch (err) {
+      console.error('Vanta/Three.js failed to initialize:', err);
+      // Optionally, show a fallback background here
     }
+    return () => {
+      if (effect) effect.destroy();
+    };
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
